@@ -12,8 +12,20 @@
 <script>
     export default {
         name: "Button",
-        props: ['icon', 'iconPosition']
+     // props: ['icon', 'iconPosition']
+        props: {
+            icon: {},
+            iconPosition: {
+                type: String,
+                default: 'left',
+                validator (value){
+                    return !(value !== 'left' && value !== 'right');
+                }
+            }
+        }
+
     }
+
 </script>
 
 <style scoped lang="scss">
